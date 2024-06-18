@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testClass.CWAllotParkingTest">
+      <class name="testClass.CWAddExpensesTest">
         <methods>
-          <include name="alotparking"/>
-          <include name="tearDown"/>
-          <include name="beforemethod"/>
+          <include name="beforeMethod"/>
+          <include name="addExpense"/>
+          <include name="afterMethod"/>
           <include name="loadConfig"/>
           <include name="aftersuite"/>
         </methods>
-      </class> <!-- testClass.CWAllotParkingTest -->
+      </class> <!-- testClass.CWAddExpensesTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

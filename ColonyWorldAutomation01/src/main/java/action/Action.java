@@ -3,7 +3,10 @@ package action;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -29,7 +32,7 @@ public class Action {
 	public static WebDriver driver;
 	ExtentManager manager;
 	ListenersClass ls;
-
+Random random ;
 
 	public static void implicitWait(WebDriver driver, int timeOut) {
 
@@ -131,5 +134,34 @@ public class Action {
 		}
 		return flag;
 	}
-	
+	/*public String RandomStartDate() {
+		// Create an instance of the Random class
+	random = new Random();
+		// Define a start date
+		Calendar startDate = new GregorianCalendar(2024, Calendar.MAY, 20);
+		// Calculate the difference in milliseconds between the start and end dates
+		long startMillis = startDate.getTimeInMillis();
+		// Generate a random number between 0 and the number of days in the range
+		long randomMillis = startMillis
+				+ (long) (random.nextDouble() * ((endDate.getTimeInMillis() - startMillis) + 1));
+		// Create a Calendar instance with the random date
+		Calendar randomDate = new GregorianCalendar();
+		randomDate.setTimeInMillis(randomMillis);
+		// Extract year, month, and day from the random date
+		int year = randomDate.get(Calendar.YEAR);
+		int month = randomDate.get(Calendar.MONTH) + 1; // Month is 0-based, so add 1
+		int day = randomDate.get(Calendar.DAY_OF_MONTH);
+		// Format the date
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		String formattedDate = String.format("%02d-%02d-%04d", day, month, year);
+		return formattedDate;
+	}
+*/
+
+
+
+
+
+
+
 }

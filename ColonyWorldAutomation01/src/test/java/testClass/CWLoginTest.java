@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import baseClass.BaseClass;
+import jdk.internal.org.jline.utils.Log;
 import pageObjectsPOM.CWLoginPomClass;
 
 public class CWLoginTest extends BaseClass  {
@@ -20,6 +21,7 @@ public void beforeMethod() {
 public void CWLogin() throws InterruptedException {
 	loginCW= new CWLoginPomClass();
 	loginCW.colonyWorldogin(user, pass);
+	Log.info(user, pass);
 }
 @AfterMethod
 public void afterMethod() {

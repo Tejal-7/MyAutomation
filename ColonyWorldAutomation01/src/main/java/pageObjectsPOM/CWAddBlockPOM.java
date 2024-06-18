@@ -52,6 +52,12 @@ WebElement validationMsg1;
 WebElement viewBlocks;
 @FindBy(xpath="//tbody/tr[10]/td[3]/a[2]/i[1]")
 WebElement deleteBtn;
+@FindBy(xpath="(//div[@class='modal-content'])[3]")
+WebElement dlt_popup;
+@FindBy(xpath="//strong[contains(text(),'Block Deleted Successfully')]")
+WebElement dltMsg ;
+
+
 
 
 
@@ -134,6 +140,31 @@ Log.info("Validation msg is displayed succesfully");
 test=ExtentManager.test.log(Status.PASS, MarkupHelper.createLabel("validation msg is displayed succesfully:"+ msg1,ExtentColor.GREEN));
 }
 //////////////////////////////////DeleteBlock////////////////////////////////
-
+public void deleteBlock() {
+	Action.JSClick(driver, viewBlocks);
+	Log.info("View Blocks is clicked ");
+	test=ExtentManager.test.info("View Blocks is clicked ");
+	Action.JSClick(driver, deleteBtn);
+	Log.info("Delete button is clicked ");
+	test=ExtentManager.test.info("Delete button is clicked ");
+	boolean stat = dlt_popup.isDisplayed();
+	try {
+		if (stat== true) {
+			System.out.println("Popup is displayed");
+		}
+		else {
+			System.out.println("Popup is not displaying");
+		}
+	}
+	catch(Exception e) { 
+		e.getMessage();
+	}
+	boolean stat2= dltMsg.isDisplayed();
+String msg1 = dltMsg.getText();
+System.out.println(msg1);
+Assert.assertEquals(msg1, "Block Deleted Successfully");
+	
+			
+}
 
 }
